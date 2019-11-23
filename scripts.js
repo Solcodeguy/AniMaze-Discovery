@@ -33,7 +33,7 @@ request.onload = function() {
         });
     } else {
         const errorMessage = document.createElement('marquee');
-        errorMessage.textContent = `Gah, it's not working!`;
+        errorMessage.textContent = `Oops, something went wrong!`;
         app.appendChild(errorMessage);
     }
 }
