@@ -1,9 +1,9 @@
 { /* // EventListener for second API, listen to each button by Class */ }
-document.getElementsByClassName('getAPI').addEventListener('click', getAPI);
+document.getElementsByClassName('getAPI').addEventListener('click', getAPI());
 
-var request = new XMLHttpRequest();
-request.onClick('GET', 'https://api.jikan.moe/v3/anime/1');
-request.onreadystatechange = function() {
+var fetchRequest = new XMLHttpRequest();
+fetchRequest.onClick('GET', 'https://api.jikan.moe/v3/anime/1/recommendations');
+fetchRequest.onreadystatechange = function() {
     if (this.readyState === 4) {
         console.log('Status:', this.status);
         console.log('Headers:', this.getAllResponseHeaders());
@@ -12,33 +12,35 @@ request.onreadystatechange = function() {
 };
 
 function getAPI() {
-    fetch('https://api.jikan.moe/v3/anime/1/news/1')
+    fetch('https://api.jikan.moe/v3/anime/1/recommendations')
         .then((res) => {
-            return res.json()
+            return res.json();
         })
         .then((data) => {
-                var data = JSON.parse(this.response);
-                var info = data.slice(0, 5);
-                if (request.status >= 200 && request.status < 400) {
-                    info.forEach((anime => {
-                        const card = document.createElement('div');
-                        card.setAttribute('class', 'card');
+            var data = JSON.parse(this.response);
+            var info = data.slice(0, 10);
+            const w = window.open();
+            $(w.document.body).html(res);
+            if (request.status >= 200 && request.status < 400) {
+                info.forEach((anime => {
+                    const w.card = document.createElement('div');
+                    card.setAttribute('class', 'card');
 
-                        const h1 = document.createElement('h1');
-                        h1.textContent = movie.title;
+                    const h1 = document.createElement('h1');
+                    h1.textContent = anime.title;
 
-                        const p = document.createElement('p');
-                        movie.description = movie.description.substring(0, 300);
-                        p.textContent = `${movie.description}...`;
+                    const p = document.createElement('p');
+                    anime.description = anime.description.substring(0, 300);
+                    p.textContent = `${anime.description}...`;
 
-                        container.appendChild(card);
-                        card.appendChild(h1);
-                        card.appendChild(p);
-                    }));
-                } else {
-                    const errorMessage = document.createElement('marquee');
-                    errorMessage.textContent = `Oops, something went wrong!`;
-                    app.appendChild(errorMessage);
-                }
+                    container.appendChild(w.card);
+                    card.appendChild(h1);
+                    card.appendChild(p);
+                }));
+            } else {
+                const fetchErrorMessage = document.createElement('marquee');
+                fetchErrorMessage.textContent = `Oops, something went wrong!`;
+                app.appendChild(errorMessage);
             }
-            request.send();
+        })
+    fetchRequest.send();
