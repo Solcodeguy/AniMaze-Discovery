@@ -2,7 +2,7 @@
 document.getElementsByClassName('getAPI').addEventListener('click', getAPI());
 
 var fetchRequest = new XMLHttpRequest();
-fetchRequest.onClick('GET', 'https://api.jikan.moe/v3/anime/1/recommendations');
+fetchRequest.onClick('GET', 'https://api.jikan.moe/v3/manga/1/characters');
 fetchRequest.onreadystatechange = function() {
     if (this.readyState === 4) {
         console.log('Status:', this.status);
@@ -12,11 +12,11 @@ fetchRequest.onreadystatechange = function() {
 };
 
 function getAPI() {
-    fetch('https://api.jikan.moe/v3/anime/1/recommendations')
+    fetch('https://api.jikan.moe/v3/manga/1/characters')
         .then((res) => {
             return res.json()
         })
-        .then((html) => {
+        .then((data) => {
             var parser = new DOMParser();
             var doc = parser.parseFromString(html, "text/html");
             const w = window.open();
