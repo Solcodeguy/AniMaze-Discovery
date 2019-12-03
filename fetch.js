@@ -14,24 +14,24 @@ fetchRequest.onreadystatechange = function() {
 function getAPI() {
     fetch('https://api.jikan.moe/v3/anime/1/recommendations')
         .then((res) => {
-            return res.json();
+            return res.json()
         })
-        .then((data) => {
-            var data = JSON.parse(this.response);
-            var info = data.slice(0, 10);
+        .then((html) => {
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(html, "text/html");
             const w = window.open();
             $(w.document.body).html(res);
             if (request.status >= 200 && request.status < 400) {
-                info.forEach((anime => {
-                    const w.card = document.createElement('div');
+                info.forEach((recommendations => {
+                    const card = document.createElement('div');
                     card.setAttribute('class', 'card');
 
                     const h1 = document.createElement('h1');
-                    h1.textContent = anime.title;
+                    h1.textContent = recommendations.title;
 
                     const p = document.createElement('p');
-                    anime.description = anime.description.substring(0, 300);
-                    p.textContent = `${anime.description}...`;
+                    recommendations.description = recommendations.description.substring(0, 300);
+                    p.textContent = `${recommendations.description}...`;
 
                     container.appendChild(w.card);
                     card.appendChild(h1);
