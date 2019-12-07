@@ -13,25 +13,58 @@
 </head>
 
 <body>
+    <!-- <script src="fetch.js"></script> -->
     <!-- Second API -->
-    <button class="getAPI" id="characters" onClick="getAPI">Characters</button>
+    <button class="getAPI" id="characters" onclick="getAPI()">Characters</button>
 
     <!-- results for second API -->
     <p id="result"></p>
 
     <div id="root"></div>
-
-
-    <script src="async.js"></script>
     <script src="scripts.js"></script>
-    <script src="fetch.js"></script>
+
+
+
 
     <!-- function for EventListener -->
-    <!-- <script type="text/javascript"> -->
-    <!-- function reply_click(clicked_id) { -->
-    <!-- alert(clicked_id); -->
-    <!-- } -->
-    <!-- </script> -->
+    <script type="text/javascript">
+        function getAPI() {
+            console.log('?log')
+            fetch('https://api.jikan.moe/v3/manga/1/characters')
+                .then((res) => {
+                    return res.json()
+                })
+                .then((data) => {
+                    var parser = new DOMParser();
+                    var doc = parser.parseFromString(html, "text/html");
+                    const w = window.open();
+                    $(w.document.body).html(res);
+                    if (request.status >= 200 && request.status < 400) {
+                        info.forEach((recommendations => {
+                            const card = document.createElement('div');
+                            card.setAttribute('class', 'card');
+
+                            const h1 = document.createElement('h1');
+                            h1.textContent = recommendations.title;
+
+                            const p = document.createElement('p');
+                            recommendations.description = recommendations.description.substring(0, 300);
+                            p.textContent = `${recommendations.description}...`;
+
+                            container.appendChild(w.card);
+                            card.appendChild(h1);
+                            card.appendChild(p);
+                        }));
+                    } else {
+                        const fetchErrorMessage = document.createElement('marquee');
+                        fetchErrorMessage.textContent = `Oops, something went wrong!`;
+                        app.appendChild(errorMessage);
+                    }
+                })
+                // fetchRequest.send();
+        }
+    </script>
+
 
 </body>
 
