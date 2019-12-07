@@ -1,17 +1,18 @@
 { /* // EventListener for second API, listen to each button by Class */ }
-document.getElementsByClassName('getAPI').addEventListener('click', getAPI());
+// document.getElementsByClassName('getAPI').addEventListener('click', getAPI);
 
-var fetchRequest = new XMLHttpRequest();
-fetchRequest.onClick('GET', 'https://api.jikan.moe/v3/manga/1/characters');
-fetchRequest.onreadystatechange = function() {
-    if (this.readyState === 4) {
-        console.log('Status:', this.status);
-        console.log('Headers:', this.getAllResponseHeaders());
-        console.log('Body:', this.responseText);
-    }
-};
+// var fetchRequest = new XMLHttpRequest();
+// fetchRequest.onClick('GET', 'https://api.jikan.moe/v3/manga/1/characters');
+// fetchRequest.onreadystatechange = function() {
+// if (this.readyState === 4) {
+// console.log('Status:', this.status);
+// console.log('Headers:', this.getAllResponseHeaders());
+// console.log('Body:', this.responseText);
+// }
+// };
 
 function getAPI() {
+    console.log('?log')
     fetch('https://api.jikan.moe/v3/manga/1/characters')
         .then((res) => {
             return res.json()
@@ -43,4 +44,5 @@ function getAPI() {
                 app.appendChild(errorMessage);
             }
         })
-    fetchRequest.send();
+        // fetchRequest.send();
+}
