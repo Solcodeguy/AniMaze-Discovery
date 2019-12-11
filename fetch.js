@@ -20,8 +20,8 @@ function getAPI() {
         .then((data) => {
             var parser = new DOMParser();
             var doc = parser.parseFromString(html, "text/html");
-            const w = window.open();
-            $(w.document.body).html(res);
+            // const w = window.open();
+            // $(w.document.body).html(res);
             if (request.status >= 200 && request.status < 400) {
                 info.forEach((recommendations => {
                     const card = document.createElement('div');
