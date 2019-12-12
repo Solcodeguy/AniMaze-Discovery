@@ -1,10 +1,14 @@
  /* // EventListener for second API, listen to each button by Class */
- //  document.getElementsByClassName('getAPI').addEventListener('click', getAPI());
+ document.getElementsById("characters").addEventListener('click', getAPI);
+ document.getElementsById("characters").onclick('click', getAPI);
 
- const app2 = document.getElementById('root');
+
+ const app2 = document.getElementById('results');
  const logo2 = document.createElement('img');
  logo2.src = 'logo.png';
 
+ //  const container = document.createElement('div');
+ //  container.setAttribute('class', 'container');
 
  //  app2.appendChild(logo2);
  //  app2.appendChild(container);
@@ -13,7 +17,7 @@
 
  var request = new XMLHttpRequest();
  request.onclick('GET', 'https://api.jikan.moe/v3/manga/1/characters');
- request.onclick = function() {
+ request.open = function() {
      //  if (this.readyState === 4) {
      //  alert("success")
      //  console.log('Status:', this.status);
@@ -29,12 +33,9 @@
                  return res.json()
              })
              .then((data) => {
-                 var data2 = JSON.parse(this.responses);
-
-                 var info2 = data2.slice(0, 10);
-
+                 var data2 = JSON.parse(this.response);
                  if (request.status >= 200 && request.status < 400) {
-                     info2.forEach(characters => {
+                     data2.forEach(characters => {
                          const card = document.createElement('div');
                          card.setAttribute('class', 'card');
 
