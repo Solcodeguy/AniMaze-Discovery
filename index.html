@@ -13,13 +13,16 @@
 </head>
 
 <body>
-    <script src="fetch.js"></script>
+    <p>AniMaze Discovery</p>
     <!-- Second API -->
-    <button class="getAPI" id="characters" onclick="getAPI">Characters</button>
+    <button onclick="getAPI()" id="characters" value="characters">Characters</button>
+    <p id="results"></p>
 
     <!-- results for API -->
+
     <div id="root"></div>
     <div class="root"></div>
+    <script src="fetch.js"></script>
     <script src="scripts.js"></script>
 
 
