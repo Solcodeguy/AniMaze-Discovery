@@ -18,13 +18,6 @@
  var request = new XMLHttpRequest();
  request.onclick('GET', 'https://api.jikan.moe/v3/manga/1/characters');
  request.open = function() {
-     //  if (this.readyState === 4) {
-     //  alert("success")
-     //  console.log('Status:', this.status);
-     //  console.log('Headers:', this.getAllResponseHeaders());
-     //  console.log('Body:', this.responseText);
-     //  }
-
 
      function getAPI() {
          console.log('?log')
