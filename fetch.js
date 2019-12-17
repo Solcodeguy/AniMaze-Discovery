@@ -16,8 +16,8 @@
 
 
  var request = new XMLHttpRequest();
- request.onclick('GET', 'https://api.jikan.moe/v3/manga/1/characters');
- request.open = function() {
+ request.open('GET', 'https://api.jikan.moe/v3/manga/1/characters');
+ request.onclick = function() {
 
      function getAPI() {
          console.log('?log')
