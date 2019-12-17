@@ -9,37 +9,27 @@
 
     <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
     <p>AniMaze Discovery</p>
-    <!-- Second API -->
+    <!-- Two API functions -->
     <button onclick="getAPI()" id="characters" value="characters">Characters</button>
-    <p id="results"></p>
-
+    <button onclick="getMovieAPI()" id="movies" value="movies">Movies</button>
     <!-- results for API -->
 
+    <p id="results"></p>
     <div id="root"></div>
-    <div class="root"></div>
+
     <script src="fetch.js"></script>
-    <script src="scripts.js"></script>
+    <!-- <script src="scripts.js"></script> -->
 
 
 
-
-    <!-- function for EventListener -->
-    <!-- <script type="text/javascript">
-        function getAPI() {
-            console.log('?log')
-            fetch('https://api.jikan.moe/v3/manga/1/characters')
-                .then((res) => {
-                    return res.json()
-                })
-                .then((data) => {
-                 } /script> -->
 
 
 </body>
 
-</html>
+</html
