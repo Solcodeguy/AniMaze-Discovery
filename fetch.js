@@ -14,6 +14,15 @@
  app2.appendChild(container);
 
  function getAPI() {
+     $('getMovieAPI').click(function() {
+         $('card').remove();
+     });
+
+     $('getRecommendationAPI').click(function() {
+         $('card').remove();
+     });
+
+
      console.log('?log')
      fetch('https://api.jikan.moe/v3/manga/1/characters')
          .then((res) => {
@@ -55,7 +64,7 @@
          })
          .then((data) => {
              console.log(data)
-             var data2 = data.slice(0, 10);
+             var data2 = data.slice(0, 20);
              console.log(data2)
 
              //  if (res.status >= 200 && request.status < 400) {
@@ -82,6 +91,39 @@
          })
  }
 
+ function getRecommendationAPI() {
+     console.log('?log')
+     fetch('https://api.jikan.moe/v3/manga/1/recommendations')
+         .then((res) => {
+             return res.json()
+         })
+         .then((data) => {
+             console.log(data)
+             var data2 = data.recommendations;
+             console.log(data2)
+                 //  if (res.status >= 200 && request.status < 400) {
+             data2.forEach(recommendations => {
+                 const card = document.createElement('div');
+                 card.setAttribute('class', 'card');
+
+                 const h1 = document.createElement('h1');
+                 h1.textContent = recommendations.title;
+
+                 const img = document.createElement('img');
+                 //  character.description = character.description.substring(0, 300);
+                 img.src = `${recommendations.image_url}`;
+
+                 container.appendChild(card);
+                 card.appendChild(h1);
+                 card.appendChild(img);
+             });
+             //  } else {
+             //  const fetchErrorMessage = document.createElement('marquee');
+             //  fetchErrorMessage.textContent = `Oops, something went wrong!`;
+             //  app2.appendChild(errorMessage);
+             //  }
+         })
+ }
  //  var request = new XMLHttpRequest();
  //  request.open('GET', 'https://api.jikan.moe/v3/manga/1/characters');
  //  request.onload = function() {
