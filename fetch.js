@@ -3,7 +3,7 @@
 
 
 
- const app2 = document.getElementById('results');
+ const app2 = document.getElementById('root');
  const logo2 = document.createElement('img');
  logo2.src = 'logo.png';
 
@@ -14,13 +14,13 @@
  app2.appendChild(container);
 
  function getAPI() {
-     $('getMovieAPI').click(function() {
-         $('card').remove();
+     $('#characters').click(function() {
+         $('data').remove();
      });
 
-     $('getRecommendationAPI').click(function() {
-         $('card').remove();
-     });
+     //  $('getRecommendationAPI').click(function() {
+     //  $('card').remove();
+     //  });
 
 
      console.log('?log')
@@ -49,7 +49,7 @@
                  card.appendChild(img);
              });
              //  } else {
-             //  const fetchErrorMessage = document.createElement('marquee');
+             //  const fetchErrorMessage = document.createElement('card');
              //  fetchErrorMessage.textContent = `Oops, something went wrong!`;
              //  app2.appendChild(errorMessage);
              //  }
@@ -124,10 +124,3 @@
              //  }
          })
  }
- //  var request = new XMLHttpRequest();
- //  request.open('GET', 'https://api.jikan.moe/v3/manga/1/characters');
- //  request.onload = function() {
-
-
- //  };
- //  request.send();
