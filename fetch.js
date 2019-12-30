@@ -1,6 +1,7 @@
  /* // EventListener for second API, listen to each button by Class */
- $("#characters")[0].addEventListener('click', getAPI);
-
+ $("button")[0].addEventListener('click', getAPI);
+ $("button")[0].addEventListener('click', getMovieAPI);
+ $("button")[0].addEventListener('click', getRecommendationAPI);
 
 
  const app2 = document.getElementById('root');
@@ -14,15 +15,6 @@
  app2.appendChild(container);
 
  function getAPI() {
-     $('#characters').click(function() {
-         $('data').remove();
-     });
-
-     //  $('getRecommendationAPI').click(function() {
-     //  $('card').remove();
-     //  });
-
-
      console.log('?log')
      fetch('https://api.jikan.moe/v3/manga/1/characters')
          .then((res) => {
@@ -32,7 +24,6 @@
              console.log(data)
              var data2 = data.characters;
              console.log(data2)
-                 //  if (res.status >= 200 && request.status < 400) {
              data2.forEach(character => {
                  const card = document.createElement('div');
                  card.setAttribute('class', 'card');
@@ -41,7 +32,6 @@
                  h1.textContent = character.name;
 
                  const img = document.createElement('img');
-                 //  character.description = character.description.substring(0, 300);
                  img.src = `${character.image_url}`;
 
                  container.appendChild(card);
@@ -67,7 +57,6 @@
              var data2 = data.slice(0, 20);
              console.log(data2)
 
-             //  if (res.status >= 200 && request.status < 400) {
              data2.forEach(movie => {
                  const card = document.createElement('div');
                  card.setAttribute('class', 'card');
@@ -101,7 +90,6 @@
              console.log(data)
              var data2 = data.recommendations;
              console.log(data2)
-                 //  if (res.status >= 200 && request.status < 400) {
              data2.forEach(recommendations => {
                  const card = document.createElement('div');
                  card.setAttribute('class', 'card');
@@ -110,7 +98,6 @@
                  h1.textContent = recommendations.title;
 
                  const img = document.createElement('img');
-                 //  character.description = character.description.substring(0, 300);
                  img.src = `${recommendations.image_url}`;
 
                  container.appendChild(card);
