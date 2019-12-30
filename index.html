@@ -20,13 +20,22 @@
     <button onclick="getAPI()" id="characters" class="characters">Characters</button>
     <button onclick="getMovieAPI()" id="movies" class="movies">Movies</button>
     <button onclick="getRecommendationAPI()" id="recommendation" class="recommendation">Recommendations</button>
+    <!-- Clear Results Button -->
+    <button id="reset" class="reset">Clear Results</button>
 
     <!-- results for API -->
-
-    <!-- <p id="results"></p> -->
     <div id="root"></div>
 
     <script src="fetch.js"></script>
+
+    <!-- Clear Results/ reload page -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#reset").click(function() {
+                $(".container").empty();
+            });
+        });
+    </script>
 
 
 </body>
