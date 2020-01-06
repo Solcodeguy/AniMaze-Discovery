@@ -26,7 +26,7 @@ h1 {
     color: white;
 }
 
-img {
+#img {
     display: block;
     margin: 1rem auto;
     max-width: 100%;
@@ -35,12 +35,14 @@ img {
 }
 
 p {
+    text-align: center;
     padding: 0 2.5rem 2.5rem;
-    margin: 0;
+    margin: 0 auto;
 }
 
 .container {
     display: auto;
+    background-color: #8fd3f4;
     flex-wrap: nowrap;
 }
 
