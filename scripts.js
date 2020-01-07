@@ -1,7 +1,6 @@
 var logo = $('#img');
 var base = $('#root');
 var container = $('<div class="container"></div>');
-var description = movie.description.substring(0, 300);
 
 $('<div class="container"></div>').addClass('container');
 
@@ -10,8 +9,9 @@ base.append(container);
 
 
 function reset() {
-    $('#reset').click(function(e) {
-        $('.container').empty();
+    $(document).on('click', "input[type='reset']", function(e) {
+        e.preventDefault();
+        $('.card').empty();
     })
 }
 
@@ -35,7 +35,6 @@ function getAPI() {
     });
 }
 
-
 function getRecommendationAPI() {
     $('#btn-recommendation').click(function(e) {
         e.preventDefault();
@@ -51,7 +50,7 @@ function getRecommendationAPI() {
                     <div class="card">
                         <h1>${recommendations.title}</h1>
                         <img src="${recommendations.image_url}"/>
-                    </div>`);
+                   </div>`);
                 });
             });
     });
@@ -62,13 +61,13 @@ function getMovieAPI() {
         e.preventDefault();
         console.log("Movies")
         fetch('https://ghibliapi.herokuapp.com/films')
-            .then((res) => {
+            .then(res => {
                 return res.json()
             })
-            .then((data) => {
+            .then(data => {
                 console.log(data)
-                data.description.forEach(movie => {
-                    container.append(`
+                data.forEach(movie => {
+                    base.append(`
                     <div class="card">
                         <h1>${movie.title}</h1>
                         <p>${movie.description}</p>
