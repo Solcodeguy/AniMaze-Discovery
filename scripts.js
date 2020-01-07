@@ -1,7 +1,6 @@
 var logo = $('#img');
 var base = $('#root');
 var container = $('<div class="container"></div>');
-
 $('<div class="container"></div>').addClass('container');
 
 base.append(logo);
