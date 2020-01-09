@@ -10,7 +10,7 @@ base.append(container);
 function reset() {
     $(document).on('click', "input[type='reset']", function(e) {
         e.preventDefault();
-        $('.card').empty();
+        $('.card').remove();
     })
 }
 
