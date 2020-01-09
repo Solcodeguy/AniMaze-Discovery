@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,45 +6,46 @@
     <meta name="Hack Capstone" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:400,700">
-    <link href="stylesheet" rel="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
     <script src="scripts.js"></script>
     <title>Anime Discovery App</title>
 </head>
 
-<body>
-    <div class="flexcontainer">
+<div class="body">
+    <div class="container">
 
         <div class="header">
             <!-- Two API functions -->
-            <button type="button" id="btn-char" class="navbar-characters">Characters</button>
-            <button type="button" id="btn-movies" class="navbar-movies">Movies</button>
-            <button type="button" id="btn-recommendation" class="navbar-recommendation">Recommendations</button>
-
-            <img id="img" src="logo.png" alt="logo">
+            <span> 
+                <button type="button" id="btn-char" class="navbar-buttons">Characters</button>
+                <button type="button" id="btn-movies" class="navbar-buttons">Movies</button>
+                <button type="button" id="btn-recommendation" class="navbar-buttons">Recommendations</button>
+            </span>
+            <img id="img" src="logo.png" alt="HTML">
         </div>
 
-        <div class="container">
+        <hr>
 
-            <p>AniMaze</p>
-            <!-- Add your site or application content here -->
-            <!-- results for API -->
-            <div id='root'>
+        <p>AniMaze</p>
+        <!-- Add your site or application content here -->
+        <!-- results for API -->
+        <div id='root'>
 
-            </div>
         </div>
     </div>
-    </div>
+</div>
+</div>
 
-    <!-- jQuery JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
-    <!-- Optional JavaScript -->
-    <script src="scripts.js"></script>
+<!-- jQuery JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+<!-- Optional JavaScript -->
+<script src="scripts.js"></script>
 
-</body>
+</div class="body">
 <div class="footer">
     <!-- Clear Results Button -->
-    <input type="reset" id="#reset" class="navbar-reset">Clear Results</button>
+    <input type="reset" id="#reset">Clear Results</button>
 
 </div>
 
