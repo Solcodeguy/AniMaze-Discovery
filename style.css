@@ -12,9 +12,20 @@ html {
     background: #F6F6F6;
 }
 
-#root {
-    max-width: 1280px;
+.body {
+    display: flex;
+    justify-content: center;
+    background-color: #a6c1ee;
+    max-width: 1200px;
     margin: 0 auto;
+}
+
+#root {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: chartreuse;
+    flex-direction: column;
 }
 
 h1 {
@@ -24,6 +35,40 @@ h1 {
     margin: 0 0 2rem 0;
     font-size: 1.5rem;
     color: white;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: #ffc3a0;
+}
+
+.header {
+    display: inline-flex;
+    justify-content: space-around;
+    background-color: peachpuff;
+}
+
+.navbar-buttons {
+    display: inline-flex;
+    justify-content: space-evenly;
+    color: rgb(255, 255, 255);
+    font-size: 10px;
+    line-height: 16px;
+    padding: 4px;
+    border-radius: 10px;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(to right, rgb(162, 119, 241) 0%, rgb(35, 136, 203) 50%, rgb(48, 26, 146) 100%);
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    border: 2px solid rgb(28, 110, 164);
+}
+
+.navbar-buttons:hover {
+    background: #1C6EA4;
 }
 
 #img {
@@ -36,7 +81,8 @@ h1 {
 
 p {
     display: flex;
-    text-align: flex-right;
+    flex-direction: row;
+    text-align: center;
     padding: 0 2.5rem 2.5rem;
     margin: 0 auto;
 }
@@ -45,13 +91,34 @@ p {
     display: flex;
     background-color: #8fd3f4;
     flex-wrap: wrap;
-    justify-content: auto;
+    justify-content: space-evenly;
     flex-direction: column;
 }
 
+#reset {
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: row;
+    color: rgb(255, 255, 255);
+    font-size: 10px;
+    line-height: 16px;
+    padding: 4px;
+    border-radius: 10px;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(to right, rgb(162, 119, 241) 0%, rgb(35, 136, 203) 50%, rgb(48, 26, 146) 100%);
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    border: 2px solid rgb(28, 110, 164);
+}
+
 .card {
+    display: inline-flex;
+    flex-direction: column;
     margin: 1rem;
-    background: white;
+    background-color: white;
     box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
     border-radius: 12px;
     overflow: hidden;
@@ -63,27 +130,42 @@ p {
     transform: translate3D(0, -2px, 0);
 }
 
-@media (max-width: 640px) {
+@media screen and (min-width: 320px) {
+    .card {
+        flex: 1 1 calc(50% - 2rem);
+    }
+    #img {
+        flex: 1 1 auto;
+    }
+}
+
+@media screen and (min-width: 481px) {
     .card {
         flex: 1 1 calc(50% - 2rem);
     }
 }
 
-@media (max-width: 1023px) {
+@media screen and (min-width: 641px) {
     .card {
         flex: 1 1 calc(40% - 2rem);
     }
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 961px) {
     .card {
-        flex: 1 1 calc(35% - 2rem);
+        flex: 2 1 calc(40% - 2rem);
     }
 }
 
-@media (min-width: 1280px) {
+@media screen and (min-width: 1025px) {
     .card {
-        flex: 1 1 calc(20% - 2rem);
+        flex: 2 1 calc(40% - 2rem);
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .card {
+        flex: 2 1 calc(40% - 2rem);
     }
 }
 
