@@ -24,7 +24,7 @@ html {
     display: flex;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
     flex-direction: column;
 }
 
@@ -40,13 +40,15 @@ h1 {
 .footer {
     display: flex;
     justify-content: center;
-    background-color: #ffc3a0;
+    /* background-color: #ffc3a0; */
+    height: 50px;
+    flex-shrink: 0;
 }
 
 .header {
     display: inline-flex;
     justify-content: space-around;
-    background-color: peachpuff;
+    /* background-color: peachpuff; */
 }
 
 .navbar-buttons {
@@ -55,8 +57,8 @@ h1 {
     color: rgb(255, 255, 255);
     font-size: 10px;
     line-height: 16px;
-    padding: 4px;
-    border-radius: 10px;
+    padding: 2px;
+    border-radius: 7px;
     font-weight: normal;
     text-decoration: none;
     font-style: normal;
@@ -120,7 +122,7 @@ p {
     margin: 1rem;
     background-color: white;
     box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
     transition: all .2s linear;
 }
@@ -147,13 +149,13 @@ p {
 
 @media screen and (min-width: 641px) {
     .card {
-        flex: 1 1 calc(40% - 2rem);
+        flex: 1 1 calc(50% - 2rem);
     }
 }
 
 @media screen and (min-width: 961px) {
     .card {
-        flex: 2 1 calc(40% - 2rem);
+        flex: 1 1 calc(50% - 2rem);
     }
 }
 
@@ -165,7 +167,7 @@ p {
 
 @media screen and (min-width: 1281px) {
     .card {
-        flex: 2 1 calc(40% - 2rem);
+        flex: 2 1 calc(30% - 2rem);
     }
 }
 
