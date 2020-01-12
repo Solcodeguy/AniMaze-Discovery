@@ -18,6 +18,8 @@ function getAPI() {
     $('#btn-char').click(function(e) {
         e.preventDefault();
         console.log("Characters")
+            // reset previous results
+        $('.card').remove();
         fetch('https://api.jikan.moe/v3/manga/1/characters')
             .then(res => {
                 return res.json()
@@ -34,10 +36,13 @@ function getAPI() {
     });
 }
 
+
 function getRecommendationAPI() {
     $('#btn-recommendation').click(function(e) {
         e.preventDefault();
         console.log("Recommendations")
+            // reset previous results
+        $('.card').remove();
         fetch('https://api.jikan.moe/v3/manga/1/recommendations')
             .then(res => {
                 return res.json()
@@ -59,6 +64,8 @@ function getMovieAPI() {
     $('#btn-movies').click(function(e) {
         e.preventDefault();
         console.log("Movies")
+            // reset previous results
+        $('.card').remove();
         fetch('https://ghibliapi.herokuapp.com/films')
             .then(res => {
                 return res.json()
