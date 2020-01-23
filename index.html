@@ -13,41 +13,41 @@
 </head>
 
 <div class="body">
-    <div class="container">
+    <div class="header">
+        <!-- Two API functions -->
+        <button type="button" id="btn-char" class="navbar-buttons">Characters</button>
+        <button type="button" id="btn-movies" class="navbar-buttons">Movies</button>
+        <button type="button" id="btn-recommendation" class="navbar-buttons">Recommendations</button>
+        <img id="img" src="logo.png" alt="HTML">
 
-        <div class="header">
-            <!-- Two API functions -->
-            <button type="button" id="btn-char" class="navbar-buttons">Characters</button>
-            <button type="button" id="btn-movies" class="navbar-buttons">Movies</button>
-            <button type="button" id="btn-recommendation" class="navbar-buttons">Recommendations</button>
-            <img id="img" src="logo.png" alt="HTML">
-        </div>
-        <hr>
+        <div class="main-heading">
+            <h2>
+                <hr/> AniMaze
+            </h2>
+            <h4><b>
+            Get manga characters, 
+            recommendations and Movie info from Myanimelist, 
+            and herokuapp.
+        </b></h4>
+            <!-- Add your site or application content here -->
+            <!-- results for API -->
+            <div class="container">
+                <div id='root'>
+                </div>
 
-
-        <p> <strong>
-            <h2>AniMaze</h2><strong> Get manga characters, 
-                recommendations and Movie info from Myanimelist, 
-                and herokuapp.
-        </p>
-        <!-- Add your site or application content here -->
-        <!-- results for API -->
-        <div id='root'>
-
+            </div>
         </div>
     </div>
 </div>
-</div>
+
 
 <!-- jQuery JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
 <!-- Optional JavaScript -->
 <script src="scripts.js"></script>
 
-</div class="body">
+
 <div class="footer">
-    <!-- Clear Results Button -->
-    <input type="reset" id="#reset">Clear Results</button>
 
 </div>
 
