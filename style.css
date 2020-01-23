@@ -28,6 +28,11 @@ html {
     flex-direction: column;
 }
 
+h2 {
+    text-align: center;
+    font-size: xx-large;
+}
+
 h1 {
     text-align: center;
     padding: 1.5rem 2.5rem;
@@ -47,18 +52,20 @@ h1 {
 
 .header {
     display: inline-flex;
+    flex-direction: column;
     justify-content: space-around;
     /* background-color: peachpuff; */
 }
 
 .navbar-buttons {
     display: inline-flex;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: space-around;
     color: rgb(255, 255, 255);
-    font-size: 10px;
-    line-height: 16px;
+    font-size: 16px;
+    line-height: 20px;
     padding: 2px;
-    border-radius: 7px;
+    border-radius: 30px;
     font-weight: normal;
     text-decoration: none;
     font-style: normal;
@@ -91,6 +98,7 @@ p {
 
 .container {
     display: flex;
+    max-width: 900px;
     /* background-color: #8fd3f4; */
     flex-wrap: wrap;
     justify-content: space-evenly;
