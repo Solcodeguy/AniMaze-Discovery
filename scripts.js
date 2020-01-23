@@ -2,7 +2,8 @@ var logo = $('#img');
 var base = $('#root');
 var container = $('<div class="container"></div>');
 $('<div class="container"></div>').addClass('container');
-
+var clearResults = $('<input type="reset" id="#reset">Clear Results</input>');
+base.append(clearResults);
 base.append(logo);
 base.append(container);
 
@@ -17,8 +18,7 @@ function reset() {
 function getAPI() {
     $('#btn-char').click(function(e) {
         e.preventDefault();
-        console.log("Characters")
-            // reset previous results
+        // console.log("Characters")
         $('.card').remove();
         fetch('https://api.jikan.moe/v3/manga/1/characters')
             .then(res => {
@@ -32,6 +32,7 @@ function getAPI() {
                         <img src="${character.image_url}"/>
                     </div>`);
                 });
+                $('#img').remove();
             });
     });
 }
@@ -40,8 +41,7 @@ function getAPI() {
 function getRecommendationAPI() {
     $('#btn-recommendation').click(function(e) {
         e.preventDefault();
-        console.log("Recommendations")
-            // reset previous results
+        // console.log("Recommendations")
         $('.card').remove();
         fetch('https://api.jikan.moe/v3/manga/1/recommendations')
             .then(res => {
@@ -56,6 +56,7 @@ function getRecommendationAPI() {
                         <img src="${recommendations.image_url}"/>
                    </div>`);
                 });
+                $('#img').remove();
             });
     });
 }
@@ -63,8 +64,7 @@ function getRecommendationAPI() {
 function getMovieAPI() {
     $('#btn-movies').click(function(e) {
         e.preventDefault();
-        console.log("Movies")
-            // reset previous results
+        // console.log("Movies")
         $('.card').remove();
         fetch('https://ghibliapi.herokuapp.com/films')
             .then(res => {
@@ -79,12 +79,13 @@ function getMovieAPI() {
                         <p>${movie.description}</p>
                     </div>`);
                 });
+                $('#img').remove();
             });
     });
 }
 
 function init() {
-    console.log("i made it to init")
+    // console.log("i made it to init")
     getAPI();
     getRecommendationAPI();
     getMovieAPI();
