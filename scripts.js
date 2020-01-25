@@ -48,7 +48,7 @@ function getRecommendationAPI() {
                 return res.json()
             })
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 data.recommendations.forEach(recommendations => {
                     container.append(`
                     <div class="card">
@@ -71,7 +71,7 @@ function getMovieAPI() {
                 return res.json()
             })
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 data.forEach(movie => {
                     base.append(`
                     <div class="card">
