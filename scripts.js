@@ -6,7 +6,7 @@ var clearResults = $('<input type="reset" id="#reset">Clear Results</input>');
 base.append(clearResults);
 base.append(logo);
 base.append(container);
-
+var url = 'https://api.jikan.moe/v3/manga/1/';
 
 function reset() {
     $(document).on('click', "input[type='reset']", function(e) {
@@ -20,7 +20,7 @@ function getAPI() {
         e.preventDefault();
         // console.log("Characters")
         $('.card').remove();
-        fetch('https://api.jikan.moe/v3/manga/1/characters')
+        fetch(url+'characters')
             .then(res => {
                 return res.json()
             })
@@ -43,7 +43,7 @@ function getRecommendationAPI() {
         e.preventDefault();
         // console.log("Recommendations")
         $('.card').remove();
-        fetch('https://api.jikan.moe/v3/manga/1/recommendations')
+        fetch(url+'recommendations')
             .then(res => {
                 return res.json()
             })
